@@ -1,0 +1,112 @@
+﻿@model Group2_ML.Models.MushroomInputModel
+
+@{
+    ViewBag.Title = "Mushroom Input";
+}
+
+<h2>Mushroom Input</h2>
+
+@using (Html.BeginForm("Predict", "Mushroom", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CapShape)
+        @Html.TextBoxFor(m => m.CapShape, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CapSurface)
+        @Html.TextBoxFor(m => m.CapSurface, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CapColor)
+        @Html.TextBoxFor(m => m.CapColor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bruises)
+        @Html.TextBoxFor(m => m.Bruises, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Odor)
+        @Html.TextBoxFor(m => m.Odor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GillAttachment)
+        @Html.TextBoxFor(m => m.GillAttachment, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GillSpacing)
+        @Html.TextBoxFor(m => m.GillSpacing, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GillSize)
+        @Html.TextBoxFor(m => m.GillSize, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GillColor)
+        @Html.TextBoxFor(m => m.GillColor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkShape)
+        @Html.TextBoxFor(m => m.StalkShape, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkRoot)
+        @Html.TextBoxFor(m => m.StalkRoot, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkSurfaceAboveRing)
+        @Html.TextBoxFor(m => m.StalkSurfaceAboveRing, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkSurfaceBelowRing)
+        @Html.TextBoxFor(m => m.StalkSurfaceBelowRing, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkColorAboveRing)
+        @Html.TextBoxFor(m => m.StalkColorAboveRing, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.StalkColorBelowRing)
+        @Html.TextBoxFor(m => m.StalkColorBelowRing, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.VeilType)
+        @Html.TextBoxFor(m => m.VeilType, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.VeilColor)
+        @Html.TextBoxFor(m => m.VeilColor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.RingNumber)
+        @Html.TextBoxFor(m => m.RingNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.RingType)
+        @Html.TextBoxFor(m => m.RingType, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SporePrintColor)
+        @Html.TextBoxFor(m => m.SporePrintColor, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Population)
+        @Html.TextBoxFor(m => m.Population, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Habitat)
+        @Html.TextBoxFor(m => m.Habitat, new { @class = "form-control" })
+    </div>
+
+    <!-- Model selection dropdown -->
+    <div class="form-group">
+        <label for="modelName">Select Model</label>
+        <select id="modelName" name="modelName" class="form-control">
+            <option value="log_reg">Logistic Regression</option>
+            <option value="svm">SVM</option>
+            <option value="ada">AdaBoost</option>
+            <option value="stacking">Stacking</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Predict</button>
+}

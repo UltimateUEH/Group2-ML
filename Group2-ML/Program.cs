@@ -28,7 +28,7 @@ namespace Group2_ML
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Mushroom}/{action=Input}/{id?}");
 
             app.Run();
         }
