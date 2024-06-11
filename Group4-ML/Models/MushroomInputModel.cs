@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Group2_ML.Models
+namespace Group4_ML.Models
 {
     public class MushroomInputModel
     {

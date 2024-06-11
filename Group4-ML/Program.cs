@@ -1,4 +1,4 @@
-namespace Group2_ML
+namespace Group4_ML
 {
     public class Program
     {

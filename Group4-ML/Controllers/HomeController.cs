@@ -1,8 +1,8 @@
-using Group2_ML.Models;
+using Group4_ML.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Group2_ML.Controllers
+namespace Group4_ML.Controllers
 {
     public class HomeController : Controller
     {
