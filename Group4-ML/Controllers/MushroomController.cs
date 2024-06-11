@@ -30,6 +30,15 @@ namespace Group2_ML.Controllers
             string result;
             string pythonScriptPath = Path.Combine(Directory.GetCurrentDirectory(), "PythonScripts", "predict.py");
 
+            // Setup Python runtime
+            PythonEngine.PythonHome = @"C:\Users\ADMIN\AppData\Local\Programs\Python\Python37"; // Adjust this path to your Python installation
+            PythonEngine.PythonPath = Environment.GetEnvironmentVariable("PYTHONPATH") +
+                                      Path.PathSeparator +
+                                      Path.Combine(PythonEngine.PythonHome, "Lib") +
+                                      Path.PathSeparator +
+                                      Path.Combine(PythonEngine.PythonHome, "DLLs");
+            PythonEngine.Initialize();
+
             using (Py.GIL())
             {
                 dynamic py = Py.Import("predict");
@@ -58,6 +67,9 @@ namespace Group2_ML.Controllers
                     inputModel.Habitat
                 );
             }
+
+            // Shutdown Python engine if necessary
+            PythonEngine.Shutdown();
 
             return result;
         }

@@ -4,6 +4,7 @@ namespace Group4_ML
     {
         public static void Main(string[] args)
         {
+            //Environment.SetEnvironmentVariable("PYTHONNET_PYDLL", "C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Python\\Python37\\python37.dll");
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
